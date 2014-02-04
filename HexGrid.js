@@ -100,8 +100,8 @@ var text = svg.selectAll("text")
    .data(hexbin(points))
    .enter()
    .append("text")
-   .text(function(d) {
-        return "TOPICS";
+   .text(function(d,i) {
+        return topic[i];
    })
    .attr("x", function(d) {
         return d.x - 20;
