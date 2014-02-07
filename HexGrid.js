@@ -27,20 +27,20 @@ function mout(d) {
 
 //svg sizes and margins
 var margin = {
-    top: 70,
+    top: 150,
     right: 100,
     bottom: 20,
-    left: 100
+    left: 60
 };
 
 //The next lines should be run, but this seems to go wrong on the first load in bl.ocks.org
-//var width = $(window).width() - margin.left - margin.right - 40;
-//var height = $(window).height() - margin.top - margin.bottom - 80;
-//So I set it fixed to
-var width = 850;
-var height = 350;
+var width = $(window).width() - margin.left - margin.right - 20;
+var height = $(window).height() - margin.top - margin.bottom - 80;
+//Fixed values 
+//var width = 850;
+//var height = 350;
 
-//The number of columns and rows of the heatmap
+//The number of columns and rows of the grid
 var MapColumns = 8,
 	MapRows = 5;
 	
