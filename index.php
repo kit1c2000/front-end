@@ -154,7 +154,7 @@ if ($header_source != '') {
 <section class="white">
     <div class="content">
 		<div id="chart"></div>
-			<script type="text/javascript" src="HexGrid.js"></script>
+			<script type="text/javascript" src="D3/HexGrid.js"></script>
     </div>
 </section>
 
