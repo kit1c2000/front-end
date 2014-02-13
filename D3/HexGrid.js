@@ -106,7 +106,7 @@ var text = svg.selectAll("text")
    })
    //on the on click we can send the topics ID to a php page to generate the graphs
    .on("click", function () {
-   var url = "wordleGenerator.html";
+   var url = "topicInfo.php";
    $(location).attr('href', url);
     //window.location = url;  
         })
