@@ -2,12 +2,11 @@
 
 error_reporting(0);
 
-//Database Connection
-$connection = mysql_connect("dbmaster.srv.stwalkerster.net",
-    "meng_project",
-    "V1sual15at10n5");
+require_once("config.inc.php");
 
-mysql_select_db("meng_project", $connection);
+//Database Connection
+$connection = mysql_connect($dbhost, $dbuser, $dbpass);
+mysql_select_db($dbname, $connection);
 
 //Simple Query
 $query = 'SELECT information.GrantRefNumber, information.GrantTitle, DATE_FORMAT(information.StartDate, "%d/%m/%Y") AS StartDate, ' .
