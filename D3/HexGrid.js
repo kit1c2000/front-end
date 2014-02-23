@@ -13,18 +13,9 @@ function mover(d) {
   var el = d3.select(this)
 		.transition()
 		.duration(10)		  
-		.style("fill", "#FFF")
+		.style("fill", "#000000")
 		;
 }
-
-//Mouseout function
-function mout(d) { 
-	var el = d3.select(this)
-	   .transition()
-	   .duration(1)
-	   .style("fill", "#ffdf63")
-	   ;
-};
 
 //svg sizes and margins
 var margin = {
@@ -117,7 +108,13 @@ var text = svg.selectAll("text")
    return color[i];
    })
    .on("mouseover", mover)
-	.on("mouseout", mout);
+	.on("mouseout", function (d,i){
+	var el = d3.select(this)
+	   .transition()
+	   .duration(1)
+	   .style("fill", color[i])
+	   ;
+	});
   
 
 	
