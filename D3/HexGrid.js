@@ -13,7 +13,7 @@ function mover(d) {
   var el = d3.select(this)
 		.transition()
 		.duration(10)		  
-		.style("fill-opacity", 0.3)
+		.style("fill", "#FFF")
 		;
 }
 
@@ -21,8 +21,8 @@ function mover(d) {
 function mout(d) { 
 	var el = d3.select(this)
 	   .transition()
-	   .duration(1000)
-	   .style("fill-opacity", 1)
+	   .duration(1)
+	   .style("fill", "#ffdf63")
 	   ;
 };
 
@@ -92,9 +92,6 @@ svg.append("g")
     .style("fill", function (d,i) {
 		return "#fff";
 	})
-	
-	.on("mouseover", mover)
-	.on("mouseout", mout)
 	;
 
 var text = svg.selectAll("text")
@@ -118,7 +115,9 @@ var text = svg.selectAll("text")
    })
    .style("fill", function (d,i) {
    return color[i];
-   });
+   })
+   .on("mouseover", mover)
+	.on("mouseout", mout);
   
 
 	
