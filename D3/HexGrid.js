@@ -22,7 +22,7 @@ var margin = {
     top: 150,
     right: 100,
     bottom: 20,
-    left: 60
+    left: 120
 };
 
 //The next lines should be run, but this seems to go wrong on the first load in bl.ocks.org
