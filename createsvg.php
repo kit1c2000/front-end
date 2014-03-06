@@ -9,14 +9,12 @@
 	global $dbuser;
 	global $dbpass;
 	
-	// Connect to server and select databse.
+	// Connect to server and select database.
 	$db = new PDO("mysql:host=$dbhost;dbname=$dbname;", $dbuser, $dbpass);
 
-	$queryToUse="
-	SELECT * FROM meng_rcuk.information where OrganisationName = 'heriot-watt university' AND ID = '".$_GET['id']."';
-	";
-	
+	$queryToUse="SELECT * FROM meng_rcuk.information where OrganisationName = 'heriot-watt university' AND ID = :id;";
 	$query = $db->prepare($queryToUse);
+	$query->bindValue(":id", $_GET['id']);
 	$query->execute();
 	
 	$result = $query->fetchAll();
