@@ -1,0 +1,20 @@
+var HexJSON = 
+{
+  "name": "Hexagons",
+  "children": [
+  {
+    "hex": "1",
+    "children": [
+      {"topicId": "0", "words": [], 
+                       "school": "MACS"},
+      {"topicId": "1", "words": [],
+                       "school": "IPE"},
+      {"topicId": "2", "words": [],
+                       "school": "LS"},
+      {"topicId": "3", "words": [],
+                       "school": "SML"},
+      {"topicId": "4", "words": [],
+                       "school": "EPS"},
+    ]
+  }
+]};
