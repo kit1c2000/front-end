@@ -7,6 +7,7 @@
 	global $dbname;
 	global $dbuser;
 	global $dbpass;
+<<<<<<< HEAD
 
 	// Connect to server and select databse.
 	$db = new PDO("mysql:host=$dbhost;dbname=$dbname;", $dbuser, $dbpass);
@@ -15,6 +16,15 @@
 	
 	$query = $db->prepare($queryToUse);
 	$query->bindValue(":topicID", $_GET['topicID']);
+=======
+	
+	// Connect to server and select database.
+	$db = new PDO("mysql:host=$dbhost;dbname=$dbname;", $dbuser, $dbpass);
+
+	$queryToUse="SELECT * FROM meng_rcuk.information where OrganisationName = 'heriot-watt university' AND ID = :id;";
+	$query = $db->prepare($queryToUse);
+	$query->bindValue(":id", $_GET['id']);
+>>>>>>> 027bf8c230c26c92f230a831af115b1af4463317
 	$query->execute();
 	
 	$result = $query->fetchAll();
