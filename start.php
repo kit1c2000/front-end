@@ -21,7 +21,7 @@ require_once("config.inc.php");
 	$db = new PDO("mysql:host=$dbhost;dbname=$dbname;", $dbuser, $dbpass);
 	
 	$queryToUse="
-	SELECT * FROM meng_rcuk.information where OrganisationName = 'heriot-watt university' limit 0, 20;
+	SELECT * FROM meng_rcuk.vw_hw_topicmap_grants_100 GROUP BY TopicID limit 0, 20;
 	";
 	
 	$query = $db->prepare($queryToUse);
@@ -32,7 +32,7 @@ require_once("config.inc.php");
 	if (count($result) > 0)
 	foreach($result as $row)
 		{
-			echo "<a href='show.php?id=".$row['ID']."'>".$row['GrantTitle']."</a><br/><br/>";
+			echo "<a href='show.php?topicID=".$row['TopicID']."'>".$row['TopicID']."</a><br/><br/>";
 		}
 ?>
 </body>

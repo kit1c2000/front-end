@@ -50,13 +50,13 @@ var parseDate = d3.time.format("%Y%m").parse;
 var alternatingColorScale = function () {
 var domain, range;
 
-function scale(x) { return range[domain.indexOf(x)%7]; }
+function scale(x) { return range[domain.indexOf(x)%20]; }
 scale.domain = function(x) {
 if(!arguments.length) return domain; domain = x; return scale; }
 scale.range = function(x) {
 if(!arguments.length) return range; range = x; return scale; }
 return scale; }
-var color = alternatingColorScale().range(["#efc050", "#d0417e", "#00947e", "#0c1e3c", "#766a62", "#dc241f", "#7fcdcd"]);
+var color = alternatingColorScale().range(["#efc050", "#d0417e", "#00947e", "#0c1e3c", "#766a62", "#dc241f", "#7fcdcd" , "#FF9900", "#99FF00", "#990033", "#996600", "#CC00CC", "#9999CC", "#33FFCC", "#006600", "#0000FF", "#660066", "#CC3300", "#993300", "#FF66FF"]);
 
 d3.tsv("monthlyfunding.tsv", function(error, data) {
 color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
