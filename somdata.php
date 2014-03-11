@@ -100,8 +100,6 @@ $wrapper->children = $fileData;
 
 header('Content-Type: application/json');
 
-echo "var HexJSON = \n";
 echo json_encode($wrapper);
-echo ";";
 // end.
 die();
